@@ -1,36 +1,39 @@
 'use strict'
 const express = require("express");
 const cors = require("cors");
+
  
 const server =express(); 
 server.use(cors());
+ 
+let moviseData =require ('/Movie data/data.json');
+server.get('/',handelhomepage);
+server.get('/favorite',handelfavorite);
+server.get('*',handelnotfound);
 
-server.get('/',handleget)
-server.get('/favorite',handleget2)
-server.get('/',handledata)
-
-function Movdata(title ,poster_path , overview){
+function data(title , poster_path ,overview){
     this.title=title;
-    this.poster_path=poster_path
-    this.overview= overview
+    this.poster_path=poster_path;
+    this.overview= overview;
 }
-
-
-
-function handleget (requset, respons){
-    return respons.status(404).send("page not found error")
-
+function handelhomepage (requset, respons){
+   
+let obj =new data(moviseData.title ,moviseData.poster_path ,moviseData.overview)
+return respons.status(200).json(obj); 
 } 
 
 
-function handleget2 (requset, respons){
-    return respons.status(500).send("Sorry, something went wrong")
+function handelfavorite (requset, respons){
+    return respons.status(200).send('wellcome to favorite page'); 
+
+   
 
 } 
-function handledata (requset, respons){
-    console.log(Movdata.title);
-    console.log(Movdata.poster_path);
-    console.log(overview)
-    //console.log(data); 
-return respons.status(200).js; 
-} 
+function handelnotfound (requset, respons){
+      return respons.status(404).send("page not found error");
+
+  }
+    
+server.listen(3000,()=>{
+    console.log('my server listen to port 3000');
+})
