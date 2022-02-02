@@ -1,13 +1,22 @@
 # Logs
 logs
+<<<<<<< HEAD
 *.log
 npm-debug.log*
+=======
+.log
+npm-debug.log
+>>>>>>> 4ea142d273fb4d8a1993cc7bea5e4a27e5e64e3e
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
+<<<<<<< HEAD
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+=======
+report.[0-9].[0-9].[0-9].[0-9].json
+>>>>>>> 4ea142d273fb4d8a1993cc7bea5e4a27e5e64e3e
 
 # Runtime data
 pids
@@ -84,7 +93,11 @@ dist
 
 # Gatsby files
 .cache/
+<<<<<<< HEAD
 # Comment in the public line in if your project uses Gatsby and *not* Next.js
+=======
+# Comment in the public line in if your project uses Gatsby and not Next.js
+>>>>>>> 4ea142d273fb4d8a1993cc7bea5e4a27e5e64e3e
 # https://nextjs.org/blog/next-9-1#public-directory-support
 # public
 
@@ -101,4 +114,8 @@ dist
 .dynamodb/
 
 # TernJS port file
+<<<<<<< HEAD
 .tern-port
+=======
+.tern-port
+>>>>>>> 4ea142d273fb4d8a1993cc7bea5e4a27e5e64e3e
