@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS movise; 
+DROP TABLE IF EXISTS movies;
 
-CREATE TABLE IF EXISTS movise(
-    id SERIAL PRIMARY KEY,
-    title  VARCHAR(1000),
-    poster_path  VARCHAR(1000),
-    overview VARCHAR(1000),
+CREATE TABLE IF NOT EXISTS movies(
+    id  SERIAL PRIMARY KEY ,
+    title VARCHAR (225),
+    poster_path VARCHAR (225),
+    overview VARCHAR (1000)
 );
