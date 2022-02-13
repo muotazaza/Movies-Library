@@ -22,9 +22,9 @@ server.get('/search', handleseacrhPage);
 server.get('/trending', handletrendingPage);
 server.post('/addMovie', handleaddmovie);
 server.get('/getMovie', handlegetmovie);
-server.put('/Update/id', handelUpdate);
-server.delete('/delete/id', handledelete);
-server.get('/getMovie/id', handlegetByid);
+server.put('/Update/:id', handelUpdate);
+server.delete('/delete/:id', handledelete);
+server.get('/getMovie/:id', handlegetByid);
 
 server.use('* ', handleNotFound);
 //server.use(errorhandler);
@@ -137,7 +137,7 @@ function handelUpdate(req, res) {
      const id = req.params.id;
     const movie = req.body;
     const sql = `UPDATE movies 
-    SET title=$1, poster_path=$2, overview=$3,
+    SET title=$1, poster_path=$2, overview=$3
     WHERE id = $4 RETURNING *;`;
     let values = [movie.title, movie.poster_path, movie.overview, id];
     client.query(sql, values).then(result => {
